@@ -18,8 +18,8 @@ class GameSearch extends Game
     public function rules()
     {
         return [
-            [['g_id', 't_id', 'gt_id', 'player_id_1', 'player_id_2', 'product_id', 'product_qty', 'created_by', 'updated_by'], 'integer'],
-            [['g_start_datetime', 'g_end_datetime', 'created_at', 'updated_at'], 'safe'],
+            [['g_id', 'gt_id', 'player2_name', 'product_id', 'product_qty', 'created_by', 'updated_by'], 'integer'],
+            [['g_start_datetime', 'g_end_datetime', 'player1_name', 'created_at', 'updated_at'], 'safe'],
             [['product_t_price'], 'number'],
         ];
     }
@@ -61,12 +61,10 @@ class GameSearch extends Game
         // grid filtering conditions
         $query->andFilterWhere([
             'g_id' => $this->g_id,
-            't_id' => $this->t_id,
             'gt_id' => $this->gt_id,
             'g_start_datetime' => $this->g_start_datetime,
             'g_end_datetime' => $this->g_end_datetime,
-            'player_id_1' => $this->player_id_1,
-            'player_id_2' => $this->player_id_2,
+            'player2_name' => $this->player2_name,
             'product_id' => $this->product_id,
             'product_qty' => $this->product_qty,
             'product_t_price' => $this->product_t_price,
@@ -75,6 +73,8 @@ class GameSearch extends Game
             'updated_at' => $this->updated_at,
             'updated_by' => $this->updated_by,
         ]);
+
+        $query->andFilterWhere(['like', 'player1_name', $this->player1_name]);
 
         return $dataProvider;
     }

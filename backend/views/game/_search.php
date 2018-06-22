@@ -20,17 +20,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'g_id') ?>
 
-    <?= $form->field($model, 't_id') ?>
-
     <?= $form->field($model, 'gt_id') ?>
 
     <?= $form->field($model, 'g_start_datetime') ?>
 
     <?= $form->field($model, 'g_end_datetime') ?>
 
-    <?php // echo $form->field($model, 'player_id_1') ?>
+    <?= $form->field($model, 'player1_name') ?>
 
-    <?php // echo $form->field($model, 'player_id_2') ?>
+    <?php // echo $form->field($model, 'player2_name') ?>
 
     <?php // echo $form->field($model, 'product_id') ?>
 
