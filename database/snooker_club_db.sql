@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 22, 2018 at 01:30 PM
+-- Generation Time: Jun 22, 2018 at 01:43 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -47,12 +47,11 @@ CREATE TABLE `bill` (
 
 CREATE TABLE `game` (
   `g_id` int(11) NOT NULL,
-  `t_id` int(11) NOT NULL,
   `gt_id` int(11) NOT NULL,
   `g_start_datetime` datetime NOT NULL,
   `g_end_datetime` datetime NOT NULL,
-  `player_id_1` int(11) NOT NULL,
-  `player_id_2` int(11) NOT NULL,
+  `player1_name` varchar(64) NOT NULL,
+  `player2_name` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `product_qty` int(11) NOT NULL,
   `product_t_price` double NOT NULL,
@@ -197,23 +196,6 @@ INSERT INTO `table_type` (`tt_id`, `tt_name`, `tt_specification`, `created_at`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `team`
---
-
-CREATE TABLE `team` (
-  `team_id` int(11) NOT NULL,
-  `team_name` varchar(64) NOT NULL,
-  `team_captain_name` varchar(64) NOT NULL,
-  `no_of_players` enum('2','3','4','5','6','7','8','9','10') NOT NULL,
-  `created_at` date NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_at` date NOT NULL,
-  `updated_by` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
@@ -253,7 +235,6 @@ ALTER TABLE `bill`
 --
 ALTER TABLE `game`
   ADD PRIMARY KEY (`g_id`),
-  ADD KEY `t_id` (`t_id`),
   ADD KEY `gt_id` (`gt_id`);
 
 --
@@ -292,12 +273,6 @@ ALTER TABLE `table`
 --
 ALTER TABLE `table_type`
   ADD PRIMARY KEY (`tt_id`);
-
---
--- Indexes for table `team`
---
-ALTER TABLE `team`
-  ADD PRIMARY KEY (`team_id`);
 
 --
 -- Indexes for table `user`
@@ -355,12 +330,6 @@ ALTER TABLE `table_type`
   MODIFY `tt_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `team`
---
-ALTER TABLE `team`
-  MODIFY `team_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
@@ -381,7 +350,6 @@ ALTER TABLE `bill`
 -- Constraints for table `game`
 --
 ALTER TABLE `game`
-  ADD CONSTRAINT `game_ibfk_1` FOREIGN KEY (`t_id`) REFERENCES `table` (`t_id`),
   ADD CONSTRAINT `game_ibfk_2` FOREIGN KEY (`gt_id`) REFERENCES `game_type` (`gt_id`);
 
 --
