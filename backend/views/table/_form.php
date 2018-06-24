@@ -3,6 +3,10 @@
     use yii\helpers\Html;
     use yii\widgets\ActiveForm;
 
+    // datetime widget...
+
+    use dosamigos\datetimepicker\DateTimePicker;
+
     /* @var $this yii\web\View */
     /* @var $model backend\models\Table */
     /* @var $form yii\widgets\ActiveForm */
@@ -29,13 +33,46 @@
         <!-- row 2 start here -->
             <div class="row">
                 <div class="col-md-4">
-                    <?= $form->field($model, 't_purchasing_date')->textInput() ?>
+                    <label>Table Purchasing Datetime</label>
+                    <?= DateTimePicker::widget([
+    'model' => $model,
+    'attribute' => 't_purchasing_date',
+    'language' => 'en',
+    'size' => 'ms',
+    'clientOptions' => [
+        'autoclose' => true,
+        'format' => 'yyyy-mm-dd HH:ii:ss',
+        'todayBtn' => true
+    ]
+]);?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 't_first_repairing_date')->textInput() ?>
+                    <label>Table First Repairing Datetime</label>
+                    <?= DateTimePicker::widget([
+    'model' => $model,
+    'attribute' => 't_first_repairing_date',
+    'language' => 'en',
+    'size' => 'ms',
+    'clientOptions' => [
+        'autoclose' => true,
+        'format' => 'yyyy-mm-dd HH:ii:ss',
+        'todayBtn' => true
+    ]
+]);?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 't_sheet_change_date')->textInput() ?>
+                    <label>Table Sheet Change Datetime</label>
+                    <?= DateTimePicker::widget([
+    'model' => $model,
+    'attribute' => 't_sheet_change_date',
+    'language' => 'en',
+    'size' => 'ms',
+    'clientOptions' => [
+        'autoclose' => true,
+        'format' => 'yyyy-mm-dd HH:ii:ss',
+        'todayBtn' => true
+    ]
+]);?>
                 </div>
             </div>
         <!-- row 2 close here -->
