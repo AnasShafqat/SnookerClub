@@ -14,14 +14,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'player_id')->textInput() ?>
 
-<<<<<<< HEAD
     <?= $form->field($model, 'table_id')->textInput() ?>
-=======
-            <div class="col-md-4">
-                <?= $form->field($model, 'bill_datetime')->widget(\yii\jui\DatePicker::className(), \omnilight\datetime\DatePickerConfig::get($model, 'bill_datetime')) ?>
-            </div>
-        </div>
->>>>>>> 61517c1321f890c27ea2a4c0d52c6cc49d0eb4b0
 
     <?= $form->field($model, 'bill_datetime')->textInput() ?>
 

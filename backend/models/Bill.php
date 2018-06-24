@@ -35,7 +35,7 @@ class Bill extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['player_id', 'table_id', 'bill_datetime', 'created_by', 'updated_by'], 'required'],
+            [['player_id', 'table_id', 'bill_datetime', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'required'],
             [['player_id', 'table_id', 'created_by', 'updated_by'], 'integer'],
             [['bill_datetime', 'created_at', 'updated_at'], 'safe'],
             [['player_id'], 'exist', 'skipOnError' => true, 'targetClass' => Player::className(), 'targetAttribute' => ['player_id' => 'p_id']],
@@ -49,14 +49,14 @@ class Bill extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'bill_id' => 'Bill ID',
-            'player_id' => 'Player ID',
-            'table_id' => 'Table ID',
-            'bill_datetime' => 'Bill Datetime',
-            'created_at' => 'Created At',
-            'created_by' => 'Created By',
-            'updated_at' => 'Updated At',
-            'updated_by' => 'Updated By',
+            'bill_id' => Yii::t('app', 'Bill ID'),
+            'player_id' => Yii::t('app', 'Player ID'),
+            'table_id' => Yii::t('app', 'Table ID'),
+            'bill_datetime' => Yii::t('app', 'Bill Datetime'),
+            'created_at' => Yii::t('app', 'Created At'),
+            'created_by' => Yii::t('app', 'Created By'),
+            'updated_at' => Yii::t('app', 'Updated At'),
+            'updated_by' => Yii::t('app', 'Updated By'),
         ];
     }
 
@@ -74,18 +74,5 @@ class Bill extends \yii\db\ActiveRecord
     public function getTable()
     {
         return $this->hasOne(Table::className(), ['t_id' => 'table_id']);
-    }
-
-    // ... Some code here
-    public function behaviors()
-    {
-        return [
-            'datetime' => [
-                'class' => DateTimeBehavior::className(), // Our behavior
-                'attributes' => [
-                    'posted_at', // List all editable date/time attributes
-                ],
-            ]
-        ];
     }
 }
