@@ -22,7 +22,7 @@
             </div>
 
             <div class="col-md-4">
-                 <?= $form->field($model, 'bill_datetime')->textInput() ?>
+                <?= $form->field($model, 'bill_datetime')->widget(\yii\jui\DatePicker::className(), \omnilight\datetime\DatePickerConfig::get($model, 'bill_datetime')) ?>
             </div>
         </div>
 
