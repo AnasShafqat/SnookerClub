@@ -75,17 +75,4 @@ class Bill extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Table::className(), ['t_id' => 'table_id']);
     }
-
-    // ... Some code here
-    public function behaviors()
-    {
-        return [
-            'datetime' => [
-                'class' => DateTimeBehavior::className(), // Our behavior
-                'attributes' => [
-                    'posted_at', // List all editable date/time attributes
-                ],
-            ]
-        ];
-    }
 }
