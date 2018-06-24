@@ -3,6 +3,11 @@
     use yii\helpers\Html;
     use yii\widgets\ActiveForm;
 
+    //datetime widget...
+
+    use dosamigos\datetimepicker\DateTimePicker;
+
+
     /* @var $this yii\web\View */
     /* @var $model backend\models\Game */
     /* @var $form yii\widgets\ActiveForm */
@@ -18,10 +23,34 @@
                     <?= $form->field($model, 'gt_id')->textInput() ?>
                 </div>
                 <div class="col-md-4">
-                    <?= $form->field($model, 'g_start_datetime')->textInput() ?>
+                    <label>Game Start Datetime</label>
+                    <?= DateTimePicker::widget([
+    'model' => $model,
+    'attribute' => 'g_start_datetime',
+    'language' => 'en',
+    'size' => 'ms',
+    'clientOptions' => [
+        'autoclose' => true,
+        'format' => 'yyyy-mm-dd HH:ii:ss',
+        'todayBtn' => true
+    ]
+]);?>
+
                 </div>
                 <div class="col-md-4">
-                  <?= $form->field($model, 'g_end_datetime')->textInput() ?>  
+                   <label>Game End Datetime</label>
+                  <?= DateTimePicker::widget([
+    'model' => $model,
+    'attribute' => 'g_end_datetime',
+    'language' => 'en',
+    'size' => 'ms',
+    'clientOptions' => [
+        'autoclose' => true,
+        'format' => 'yyyy-mm-dd HH:ii:ss',
+        'todayBtn' => true
+    ]
+]);?>
+ 
                 </div>
             </div>
         <!-- row 1 close here -->
