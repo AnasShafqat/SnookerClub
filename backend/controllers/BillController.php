@@ -1,6 +1,6 @@
 <?php
 
-namespace backend\controllers;
+namespace backend\Controllers;
 
 use Yii;
 use backend\models\Bill;
