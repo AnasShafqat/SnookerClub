@@ -3,6 +3,10 @@
     use yii\helpers\Html;
     use yii\widgets\ActiveForm;
 
+    // datetime widget...
+
+    use dosamigos\datetimepicker\DateTimePicker;
+
     /* @var $this yii\web\View */
     /* @var $model backend\models\Bill */
     /* @var $form yii\widgets\ActiveForm */
@@ -21,7 +25,19 @@
                     <?= $form->field($model, 'table_id')->textInput() ?>
                 </div>
                 <div class="col-md-4">
-                   <?= $form->field($model, 'bill_datetime')->textInput() ?> 
+                   <label>Bill Date</label>
+                   <?= DateTimePicker::widget([
+    'model' => $model,
+    'attribute' => 'bill_datetime',
+    'language' => 'en',
+    'size' => 'ms',
+    'clientOptions' => [
+        'autoclose' => true,
+        'format' => 'yyyy-mm-dd HH:ii:ss',
+        'todayBtn' => true
+    ]
+]);?>
+ 
                 </div>
             </div>
         <!-- row 1 close here -->
