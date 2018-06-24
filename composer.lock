@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "6afaa6fc3d1843742e8795008d052e17",
+=======
+    "content-hash": "7219b97c16a0eac4ed1d1ef139ba7db1",
+>>>>>>> 61517c1321f890c27ea2a4c0d52c6cc49d0eb4b0
     "packages": [
         {
             "name": "2amigos/yii2-date-time-picker-widget",
@@ -91,6 +95,29 @@
             ]
         },
         {
+            "name": "bower-asset/eonasdan-bootstrap-datetimepicker",
+            "version": "4.17.47",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:Eonasdan/bootstrap-datetimepicker.git",
+                "reference": "25c11d79e614bc6463a87c3dd9cbf8280422e006"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Eonasdan/bootstrap-datetimepicker/zipball/25c11d79e614bc6463a87c3dd9cbf8280422e006",
+                "reference": "25c11d79e614bc6463a87c3dd9cbf8280422e006",
+                "shasum": null
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.8.3",
+                "bower-asset/moment": ">=2.10.5"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
             "name": "bower-asset/gentelella",
             "version": "1.4.0",
             "source": {
@@ -143,6 +170,25 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/77d2a51d0520d2ee44173afdf4e40a9201f5964e",
                 "reference": "77d2a51d0520d2ee44173afdf4e40a9201f5964e",
+                "shasum": null
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/moment",
+            "version": "2.22.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moment/moment.git",
+                "reference": "2e2a5b35439665d4b0200143d808a7c26d6cd30f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moment/moment/zipball/2e2a5b35439665d4b0200143d808a7c26d6cd30f",
+                "reference": "2e2a5b35439665d4b0200143d808a7c26d6cd30f",
                 "shasum": null
             },
             "type": "bower-asset",
@@ -471,6 +517,46 @@
             "time": "2016-10-24T15:52:54+00:00"
         },
         {
+            "name": "omnilight/yii2-datetime",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/omnilight/yii2-datetime.git",
+                "reference": "d75399291c02792cceddd2366170b55dc5d1b1ae"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/omnilight/yii2-datetime/zipball/d75399291c02792cceddd2366170b55dc5d1b1ae",
+                "reference": "d75399291c02792cceddd2366170b55dc5d1b1ae",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "omnilight\\datetime\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Pavel Agalecky",
+                    "email": "pavel.agalecky@gmail.com"
+                }
+            ],
+            "description": "Yii2 extension that adds helpers and behaviors for working with date and time",
+            "keywords": [
+                "date",
+                "datetime",
+                "time",
+                "yii2"
+            ],
+            "time": "2016-09-04T11:56:51+00:00"
+        },
+        {
             "name": "rmrevin/yii2-fontawesome",
             "version": "2.17.1",
             "source": {
@@ -576,6 +662,51 @@
                 "mailer"
             ],
             "time": "2017-09-30T22:39:41+00:00"
+        },
+        {
+            "name": "trntv/yii2-datetime-widget",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/trntv/yii2-datetime-widget.git",
+                "reference": "9f636a202494b28caeedb8a96708b57af1217b98"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/trntv/yii2-datetime-widget/zipball/9f636a202494b28caeedb8a96708b57af1217b98",
+                "reference": "9f636a202494b28caeedb8a96708b57af1217b98",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/eonasdan-bootstrap-datetimepicker": "^4.17",
+                "bower-asset/moment": "^2.21",
+                "yiisoft/yii2": "^2.0"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "trntv\\yii\\datetime\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Eugene Terentev",
+                    "email": "eugene@terentev.net"
+                }
+            ],
+            "description": "Date/Time Picker widget for Yii2 framework",
+            "keywords": [
+                "bootstrap",
+                "datetime picker",
+                "extension",
+                "widget",
+                "yii2"
+            ],
+            "time": "2018-03-17T15:18:47+00:00"
         },
         {
             "name": "yiisoft/yii2",
